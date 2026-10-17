@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import App from '../App.jsx';
+---
+
+<Layout>
+  <!-- Mount full React Application Island identical 100% to Vercel/Vite codebase -->
+  <App client:load />
+</Layout>

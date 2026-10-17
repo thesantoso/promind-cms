@@ -1,0 +1,14 @@
+name = "promind"
+compatibility_date = "2026-10-17"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare D1 Database binding for EmDash CMS
+[[d1_databases]]
+binding = "DB"
+database_name = "promind-db"
+database_id = "69b62e8d-e914-47ad-af09-5474b7d00dc5"
+
+# Cloudflare KV binding for EmDash sessions
+[[kv_namespaces]]
+binding = "SESSION"
+id = "a53a01e6c6fb46fb8e47cdd6f7d54c65"
