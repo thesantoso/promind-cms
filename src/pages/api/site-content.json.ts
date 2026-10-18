@@ -15,6 +15,7 @@ export const GET: APIRoute = async () => {
 
     // Parallel fetch from D1 tables
     const [
+      maintenanceRes,
       companyInfoRes,
       fieldworkRes,
       portfolioRes,
@@ -25,6 +26,7 @@ export const GET: APIRoute = async () => {
       servicesRes,
       propertyScopesRes,
     ] = await Promise.all([
+      db.prepare("SELECT * FROM ec_maintenance ORDER BY updated_at DESC LIMIT 1").first(),
       db.prepare("SELECT * FROM ec_company_info WHERE status = 'published' LIMIT 1").first(),
       db.prepare("SELECT * FROM ec_fieldwork WHERE status = 'published' ORDER BY step_number ASC").all(),
       db.prepare("SELECT * FROM ec_portfolio WHERE status = 'published' ORDER BY created_at ASC").all(),
@@ -36,6 +38,18 @@ export const GET: APIRoute = async () => {
       db.prepare("SELECT * FROM ec_property_scopes WHERE status = 'published' ORDER BY scope_number ASC").all(),
     ]);
 
+    const isMaint = maintenanceRes
+      ? (maintenanceRes.is_maintenance === 1 || maintenanceRes.is_maintenance === '1' || maintenanceRes.is_maintenance === true || maintenanceRes.is_maintenance === 'true')
+      : Boolean(companyInfoRes?.is_maintenance);
+
+    const maintenance = {
+      isMaintenance: Boolean(isMaint),
+      title: maintenanceRes?.title || 'Sistem Sedang Dalam Pemeliharaan',
+      message: maintenanceRes?.maintenance_message || companyInfoRes?.maintenance_message || '',
+      estimatedDuration: maintenanceRes?.estimated_duration || companyInfoRes?.maintenance_estimate || '',
+      emergencyContact: maintenanceRes?.emergency_contact || companyInfoRes?.email || '',
+    };
+
     // Format company info
     const companyInfo = companyInfoRes ? {
       companyName: companyInfoRes.company_name,
@@ -46,9 +60,9 @@ export const GET: APIRoute = async () => {
       email: companyInfoRes.email,
       phone: companyInfoRes.phone,
       whatsapp: companyInfoRes.whatsapp,
-      isMaintenance: Boolean(companyInfoRes.is_maintenance),
-      maintenanceMessage: companyInfoRes.maintenance_message || '',
-      maintenanceEstimate: companyInfoRes.maintenance_estimate || '',
+      isMaintenance: Boolean(isMaint),
+      maintenanceMessage: maintenanceRes?.maintenance_message || companyInfoRes.maintenance_message || '',
+      maintenanceEstimate: maintenanceRes?.estimated_duration || companyInfoRes.maintenance_estimate || '',
     } : null;
 
     // Format fieldwork
@@ -138,6 +152,7 @@ export const GET: APIRoute = async () => {
     }));
 
     return new Response(JSON.stringify({
+      maintenance,
       companyInfo,
       fieldwork,
       portfolio,

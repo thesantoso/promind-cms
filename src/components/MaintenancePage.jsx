@@ -1,11 +1,12 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
-export default function MaintenancePage({ customMessage, estimate, contactEmail, contactPhone }) {
-  const message = customMessage?.trim() || 'Kami sedang memperbaiki situs agar dapat digunakan kembali. Terima kasih sudah menunggu.';
+export default function MaintenancePage({ title, customMessage, estimate, contactEmail, contactPhone, emergencyContact }) {
+  const displayTitle = title?.trim() || 'Situs PROMIND sedang diperbaiki.';
+  const message = customMessage?.trim() || 'Kami sedang melakukan pemeliharaan sistem berkala untuk menjaga stabilitas dan performa layanan. Layanan publik akan segera kembali normal.';
   const repairEstimate = estimate?.trim();
-  const email = contactEmail?.trim() || 'corporate@promind.id';
-  const phone = contactPhone?.trim();
+  const email = contactEmail?.trim() || (emergencyContact?.includes('@') ? emergencyContact.split('|')[0].trim() : 'corporate@promind.id');
+  const phone = contactPhone?.trim() || (emergencyContact?.includes('+') ? emergencyContact.split('|').find(s => s.includes('+'))?.trim() : '');
   const phoneHref = phone ? `tel:${phone.replace(/[^\d+]/g, '')}` : '';
 
   return (
@@ -23,7 +24,7 @@ export default function MaintenancePage({ customMessage, estimate, contactEmail,
         <div className="wrap maintenance-layout">
           <div className="maintenance-primary">
             <p className="maintenance-eyebrow">Pembaruan situs</p>
-            <h1>Situs PROMIND sedang diperbaiki.</h1>
+            <h1>{displayTitle}</h1>
             <p className="maintenance-message">{message}</p>
           </div>
 

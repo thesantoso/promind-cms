@@ -5,27 +5,53 @@ import MaintenancePage from '../components/MaintenancePage.jsx';
 import { env } from 'cloudflare:workers';
 import { promindContent } from '../data/promindContent';
 
-// 1. Check Maintenance Mode from D1 ec_company_info
+// 1. Check Maintenance Mode from D1 ec_maintenance (with fallback to ec_company_info)
 let isMaintenance = false;
+let maintenanceTitle = '';
 let maintenanceMessage = '';
 let maintenanceEstimate = '';
 let contactEmail = '';
 let contactPhone = '';
+let emergencyContact = '';
 let dbAvailable = false;
 
 try {
   const db = (env as any).DB;
   if (db) {
     dbAvailable = true;
-    const company = await db
-      .prepare("SELECT * FROM ec_company_info WHERE status = 'published' LIMIT 1")
+    // Check dedicated maintenance collection first
+    const maintConfig = await db
+      .prepare("SELECT * FROM ec_maintenance ORDER BY updated_at DESC LIMIT 1")
       .first();
-    if (company && (company.is_maintenance === 1 || company.is_maintenance === '1' || company.is_maintenance === true || company.is_maintenance === 'true')) {
+
+    if (maintConfig && (maintConfig.is_maintenance === 1 || maintConfig.is_maintenance === '1' || maintConfig.is_maintenance === true || maintConfig.is_maintenance === 'true')) {
       isMaintenance = true;
-      maintenanceMessage = company.maintenance_message || '';
-      maintenanceEstimate = company.maintenance_estimate || '';
-      contactEmail = company.email || '';
-      contactPhone = company.phone || '';
+      maintenanceTitle = maintConfig.title || '';
+      maintenanceMessage = maintConfig.maintenance_message || '';
+      maintenanceEstimate = maintConfig.estimated_duration || '';
+      emergencyContact = maintConfig.emergency_contact || '';
+    } else if (!maintConfig) {
+      // Fallback check company_info if maintenance table doesn't have rows
+      const company = await db
+        .prepare("SELECT * FROM ec_company_info WHERE status = 'published' LIMIT 1")
+        .first();
+      if (company && (company.is_maintenance === 1 || company.is_maintenance === '1' || company.is_maintenance === true || company.is_maintenance === 'true')) {
+        isMaintenance = true;
+        maintenanceMessage = company.maintenance_message || '';
+        maintenanceEstimate = company.maintenance_estimate || '';
+        contactEmail = company.email || '';
+        contactPhone = company.phone || '';
+      }
+    }
+
+    if (isMaintenance && (!contactEmail || !contactPhone)) {
+      const company = await db
+        .prepare("SELECT email, phone FROM ec_company_info LIMIT 1")
+        .first();
+      if (company) {
+        if (!contactEmail) contactEmail = company.email || '';
+        if (!contactPhone) contactPhone = company.phone || '';
+      }
     }
   }
 } catch {
@@ -83,7 +109,14 @@ if (isMaintenance) {
 
 <Layout title={pageTitle} description={pageDescription} ogUrl={sharePageUrl}>
   {isMaintenance ? (
-    <MaintenancePage customMessage={maintenanceMessage} estimate={maintenanceEstimate} contactEmail={contactEmail} contactPhone={contactPhone} />
+    <MaintenancePage
+      title={maintenanceTitle}
+      customMessage={maintenanceMessage}
+      estimate={maintenanceEstimate}
+      contactEmail={contactEmail}
+      contactPhone={contactPhone}
+      emergencyContact={emergencyContact}
+    />
   ) : (
     <App client:load />
   )}
