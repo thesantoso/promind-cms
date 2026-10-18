@@ -33,6 +33,8 @@ export const GET: APIRoute = async () => {
           .split('\n')
           .map((s: string) => s.trim())
           .filter(Boolean),
+        published_at: item.published_at || item.created_at || '2026-10-17T13:00:00.000Z',
+        created_at: item.created_at || '2026-10-17T13:00:00.000Z',
         status: item.status,
       }));
 

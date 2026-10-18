@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+.wrangler/
+emdash-env.d.ts
 
 # dependencies
 node_modules/

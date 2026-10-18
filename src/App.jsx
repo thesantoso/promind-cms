@@ -18,6 +18,7 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [activeJobSlug, setActiveJobSlug] = useState(null);
   const [cmsContent, setCmsContent] = useState(null);
+  const [cmsResolved, setCmsResolved] = useState(false);
 
   useEffect(() => {
     fetch('/api/site-content.json')
@@ -27,16 +28,26 @@ export default function App() {
           setCmsContent(data);
         }
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setCmsResolved(true));
   }, []);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const rawHash = window.location.hash.replace('#/', '').replace('#', '');
-      const lower = rawHash.toLowerCase();
+    const resolveRoute = () => {
+      // 1. Try clean pathname first (e.g., /careers/building-manager or /services)
+      const path = window.location.pathname.replace(/^\/+/, '').replace(/\/+$/, '');
+      const rawHash = window.location.hash.replace(/^#\/?/, '');
+      const routeStr = path || rawHash;
+      const lower = routeStr.toLowerCase();
 
       if (lower.startsWith('careers/')) {
-        const slug = rawHash.substring('careers/'.length);
+        const encodedSlug = routeStr.substring('careers/'.length);
+        let slug = encodedSlug;
+        try {
+          slug = decodeURIComponent(encodedSlug);
+        } catch {
+          slug = encodedSlug;
+        }
         setCurrentPage('career-detail');
         setActiveJobSlug(slug);
       } else {
@@ -45,28 +56,44 @@ export default function App() {
           setCurrentPage(lower);
           setActiveJobSlug(null);
         } else if (!lower) {
-          setCurrentPage('home');
-          setActiveJobSlug(null);
+          const sharedSlug = new URLSearchParams(window.location.search).get('career');
+          setCurrentPage(sharedSlug ? 'career-detail' : 'home');
+          setActiveJobSlug(sharedSlug);
         }
       }
     };
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    resolveRoute();
+    window.addEventListener('popstate', resolveRoute);
+    window.addEventListener('hashchange', resolveRoute);
+    return () => {
+      window.removeEventListener('popstate', resolveRoute);
+      window.removeEventListener('hashchange', resolveRoute);
+    };
   }, []);
 
   const navigateTo = (pageId) => {
-    if (pageId.startsWith('careers/')) {
-      const slug = pageId.substring('careers/'.length);
+    const cleanPage = pageId.replace(/^#\/?/, '').replace(/^\/+/, '');
+    let targetPath = '/';
+
+    if (cleanPage && cleanPage !== 'home') {
+      targetPath = `/${cleanPage}`;
+    }
+
+    if (cleanPage.startsWith('careers/')) {
+      const slug = cleanPage.substring('careers/'.length);
       setCurrentPage('career-detail');
       setActiveJobSlug(slug);
-      window.location.hash = `#/${pageId}`;
     } else {
-      setCurrentPage(pageId);
+      setCurrentPage(cleanPage === '' ? 'home' : cleanPage);
       setActiveJobSlug(null);
-      window.location.hash = `#/${pageId}`;
     }
+
+    // Push clean URL to browser history without '#'
+    if (window.location.pathname !== targetPath || window.location.hash) {
+      window.history.pushState(null, '', targetPath);
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -89,27 +116,27 @@ export default function App() {
     }
 
     // 2. Merge Fieldwork (Eksekusi di Lapangan)
-    if (Array.isArray(cmsContent.fieldwork) && cmsContent.fieldwork.length > 0) {
+    if (Array.isArray(cmsContent.fieldwork)) {
       merged.home.fieldwork.items = cmsContent.fieldwork;
     }
 
     // 3. Merge Research (Wawasan)
-    if (Array.isArray(cmsContent.research) && cmsContent.research.length > 0) {
+    if (Array.isArray(cmsContent.research)) {
       merged.researchPage.reports = cmsContent.research;
     }
 
     // 4. Merge Careers
-    if (Array.isArray(cmsContent.careers) && cmsContent.careers.length > 0) {
+    if (Array.isArray(cmsContent.careers)) {
       merged.careersPage.jobs = cmsContent.careers;
     }
 
     // 5. Merge Services (Cakupan Layanan)
-    if (Array.isArray(cmsContent.services) && cmsContent.services.length > 0) {
+    if (Array.isArray(cmsContent.services)) {
       merged.servicesPage.pillars = cmsContent.services;
     }
 
     // 6. Merge Property Scopes (Cakupan Pengelolaan Properti)
-    if (Array.isArray(cmsContent.propertyScopes) && cmsContent.propertyScopes.length > 0) {
+    if (Array.isArray(cmsContent.propertyScopes)) {
       merged.home.hero.scopes = cmsContent.propertyScopes;
     }
 
@@ -121,7 +148,7 @@ export default function App() {
     const allJobs = t.careersPage?.jobs || [];
     return allJobs.find(
       (j) => j.slug === activeJobSlug || j.id === activeJobSlug
-    ) || allJobs[0];
+    ) || null;
   }, [activeJobSlug, t.careersPage?.jobs]);
 
   return (
@@ -170,6 +197,7 @@ export default function App() {
             <CareerDetailPage
               job={activeJob}
               lang={lang}
+              loading={!cmsResolved && !activeJob}
               onNavigate={navigateTo}
             />
           )}

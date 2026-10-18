@@ -46,6 +46,9 @@ export const GET: APIRoute = async () => {
       email: companyInfoRes.email,
       phone: companyInfoRes.phone,
       whatsapp: companyInfoRes.whatsapp,
+      isMaintenance: Boolean(companyInfoRes.is_maintenance),
+      maintenanceMessage: companyInfoRes.maintenance_message || '',
+      maintenanceEstimate: companyInfoRes.maintenance_estimate || '',
     } : null;
 
     // Format fieldwork
@@ -105,6 +108,8 @@ export const GET: APIRoute = async () => {
         .split('\n')
         .map((s: string) => s.trim())
         .filter(Boolean),
+      published_at: item.published_at || item.created_at || '2026-10-17T13:00:00.000Z',
+      created_at: item.created_at || '2026-10-17T13:00:00.000Z',
     }));
 
     // Format hero slides
@@ -155,4 +160,3 @@ export const GET: APIRoute = async () => {
     });
   }
 };
-

@@ -2,12 +2,15 @@
 interface Props {
   title?: string;
   description?: string;
+  ogUrl?: string;
 }
 
 const {
   title = "PROMIND | Manajemen Properti Terintegrasi",
-  description = "PROMIND menyediakan layanan manajemen properti terintegrasi, dari persiapan operasional dan asesmen gedung hingga engineering, HSE, dan layanan tenant."
+  description = "PROMIND menyediakan layanan manajemen properti terintegrasi, dari persiapan operasional dan asesmen gedung hingga engineering, HSE, dan layanan tenant.",
+  ogUrl = Astro.url.href
 } = Astro.props;
+const ogImage = new URL('/images/promind-header-brand.png', Astro.url.origin).href;
 ---
 
 <!doctype html>
@@ -18,17 +21,22 @@ const {
     <meta name="theme-color" content="#f6f5f1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta property="og:title" content="PROMIND | Manajemen Properti Terintegrasi" />
-    <meta property="og:description" content="Dukungan pengelolaan properti dari persiapan gedung hingga operasional sehari-hari." />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/promind-header-brand.png" />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles-exact.css?v=1792249129" />
+    <link rel="stylesheet" href="/styles-exact.css?v=20261018-maintenance" />
   </head>
   <body class="site-shell bg-[#f6f5f1] text-[#1d2936]">
     <slot />

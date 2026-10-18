@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "cms:maintenance-field": "node scripts/ensure-maintenance-field.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.4.0",
