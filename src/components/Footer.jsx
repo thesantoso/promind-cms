@@ -51,7 +51,7 @@ export default function Footer({ onNavigate, t, lang }) {
 
           {/* Standards Column */}
           <div className="footer-column footer-standards">
-            <h2>{lang === 'id' ? 'Standar & Sertifikasi' : 'Standards & Certifications'}</h2>
+            <h2>{lang === 'id' ? 'Standar & Sistem' : 'Standards & Systems'}</h2>
             <ul>
               {meta.standards.map((std) => (
                 <li key={std.code}>

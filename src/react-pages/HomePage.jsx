@@ -170,42 +170,24 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 2. Managed Property Scope & Digital Supporting Bar */}
+      {/* 2. Managed Property Scope */}
       <section className="bg-white border-b border-[#d8dfe5] py-14">
         <div className="wrap">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            {/* 4 Core Managed Asset Types */}
-            <div className="lg:col-span-8">
-              <p className="eyebrow mb-5">{home.hero.scopeTitle}</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-4 border-t border-[#cfd8e0]">
-                {home.hero.scopes.map((item, idx) => (
-                  <div key={idx} className="pr-2">
-                    <span className="text-[11px] font-extrabold text-[#2b5caf] block mb-1.5">
-                      0{idx + 1}
-                    </span>
-                    <h2 className="text-base font-bold text-[#172b42] font-manrope mb-1.5 tracking-tight">
-                      {item.title}
-                    </h2>
-                    <p className="text-xs text-[#5b6874] leading-relaxed m-0">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
+          <p className="eyebrow mb-5">{home.hero.scopeTitle}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-6 border-t border-[#cfd8e0]">
+            {home.hero.scopes.map((item, idx) => (
+              <div key={idx} className="pr-2">
+                <span className="text-[11px] font-extrabold text-[#2b5caf] block mb-1.5">
+                  0{idx + 1}
+                </span>
+                <h2 className="text-base font-bold text-[#172b42] font-manrope mb-1.5 tracking-tight">
+                  {item.title}
+                </h2>
+                <p className="text-xs text-[#5b6874] leading-relaxed m-0">
+                  {item.desc}
+                </p>
               </div>
-            </div>
-
-            {/* Digital Supporting System */}
-            <div className="lg:col-span-4 bg-[#f4f7fa] border-l-2 border-[#2b5caf] p-6 self-stretch flex flex-col justify-center">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#2b5caf] block mb-2">
-                {home.hero.supportingLabel}
-              </span>
-              <div className="text-xl font-extrabold text-[#172b42] font-manrope tracking-tight mb-2">
-                {lang === 'id' ? 'SISTEM DIGITAL' : 'DIGITAL SYSTEM'}
-              </div>
-              <p className="text-xs sm:text-sm text-[#4f5f70] leading-relaxed m-0">
-                {home.hero.supportingText}
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>

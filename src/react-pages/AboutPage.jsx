@@ -43,7 +43,7 @@ export default function AboutPage({ t, lang, onNavigate }) {
         </div>
       </section>
 
-      {/* 4 Core Pillars & ISO Standards */}
+      {/* Core Pillars & ISO Standards */}
       <section className="value-section">
         <div className="wrap">
           <div className="value-heading">
@@ -53,8 +53,8 @@ export default function AboutPage({ t, lang, onNavigate }) {
               </p>
               <h2>
                 {lang === 'id'
-                  ? 'Empat Fondasi Pengelolaan PROMIND'
-                  : 'Four Foundations of PROMIND Management'}
+                  ? 'Lima Fondasi Pengelolaan PROMIND'
+                  : 'Five Foundations of PROMIND Management'}
               </h2>
             </div>
             <p>
