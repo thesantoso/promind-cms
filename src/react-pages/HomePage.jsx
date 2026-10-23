@@ -174,7 +174,7 @@ export default function HomePage({
       <section className="bg-white border-b border-[#d8dfe5] py-14">
         <div className="wrap">
           <p className="eyebrow mb-5">{home.hero.scopeTitle}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-6 border-t border-[#cfd8e0]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 pt-6 border-t border-[#cfd8e0]">
             {home.hero.scopes.map((item, idx) => (
               <div key={idx} className="pr-2">
                 <span className="text-[11px] font-extrabold text-[#2b5caf] block mb-1.5">
@@ -203,7 +203,7 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 4. Property Sectors Managed (Office Building, Apartment, Mall, Real Estate) */}
+      {/* 4. Property Sectors Managed (Apartment, Office Building, Retail & Commercial Building, Estate Cluster, District Area, Township) */}
       <section className="value-section">
         <div className="wrap">
           <div className="value-heading">
@@ -214,12 +214,12 @@ export default function HomePage({
             <p>{home.sectors.subtitle}</p>
           </div>
 
-          <div className="value-list">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8 border-t border-[#cbd2d9]">
             {home.sectors.items.map((sector) => (
-              <article key={sector.num}>
-                <span>{sector.num}</span>
-                <h3>{sector.title}</h3>
-                <p>{sector.desc}</p>
+              <article key={sector.num} className="pt-2 border-t-2 border-transparent hover:border-[#2b5caf] transition-colors">
+                <span className="text-[11px] font-extrabold text-[#2b5caf] block mb-2">{sector.num}</span>
+                <h3 className="text-xl font-bold text-[#172b42] font-manrope mb-2 tracking-tight">{sector.title}</h3>
+                <p className="text-sm text-[#5b6874] leading-relaxed m-0">{sector.desc}</p>
               </article>
             ))}
           </div>

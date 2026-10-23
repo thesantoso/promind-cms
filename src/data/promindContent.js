@@ -38,20 +38,28 @@ export const promindContent = {
         scopeTitle: "Cakupan Pengelolaan Properti",
         scopes: [
           {
-            title: "Office Building",
-            desc: "Operasional gedung perkantoran, keandalan M&E, dan efisiensi biaya pengelolaan.",
-          },
-          {
             title: "Apartment",
-            desc: "Pengelolaan hunian vertikal, kemitraan PPPSRS, dan kenyamanan penghuni.",
+            desc: "Pengelolaan hunian vertikal terpadu, kemitraan PPPSRS, kenyamanan penghuni, dan keandalan fasilitas bersama.",
           },
           {
-            title: "Mall & Commercial",
-            desc: "Manajemen pusat perbelanjaan, koordinasi tenant ritel, dan ketertiban area publik.",
+            title: "Office Building",
+            desc: "Operasional gedung perkantoran korporat, keandalan sistem M&E, keamanan terpadu, dan efisiensi biaya (OPEX).",
           },
           {
-            title: "Real Estate",
-            desc: "Pengelolaan kawasan terpadu, pemeliharaan infrastruktur, lanskap, dan keamanan.",
+            title: "Retail & Commercial Building",
+            desc: "Manajemen pusat perbelanjaan dan gedung komersial, koordinasi tenant ritel, kebersihan, dan ketertiban area publik.",
+          },
+          {
+            title: "Estate Cluster",
+            desc: "Pengelolaan klaster hunian dan residensial, tata lingkungan rapi, perawatan lanskap, sistem drainase, dan keamanan 24 jam.",
+          },
+          {
+            title: "District Area",
+            desc: "Manajemen kawasan distrik multi-fungsi, integrasi fasilitas bersama, koordinasi utilitas, dan kelancaran mobilitas kawasan.",
+          },
+          {
+            title: "Township",
+            desc: "Pengelolaan skala kota mandiri secara komprehensif, infrastruktur makro, WTP/STP kawasan, dan tata kelola lingkungan terpadu.",
           },
         ],
         supportingLabel: "DIGITAL SUPPORTING OPERASIONAL",
@@ -68,27 +76,37 @@ export const promindContent = {
         eyebrow: "SEKTOR PROPERTI",
         title: "Pengelolaan yang Disesuaikan dengan Karakter Setiap Aset.",
         subtitle:
-          "Setiap jenis properti memiliki tuntutan operasional yang berbeda. Kami menyusun struktur tim, prosedur kerja, dan standar layanan sesuai kebutuhan spesifik bangunan Anda.",
+          "Setiap jenis properti memiliki tuntutan operasional yang berbeda. Kami menyusun struktur tim, prosedur kerja, dan standar layanan sesuai kebutuhan spesifik aset Anda.",
         items: [
           {
             num: "01",
+            title: "Apartment",
+            desc: "Mendampingi pemilik dan pengurus PPPSRS dalam menciptakan lingkungan hunian yang tertib, pengelolaan IPL & Sinking Fund yang transparan, penanganan komplain unit yang responsif, serta perawatan fasilitas bersama.",
+          },
+          {
+            num: "02",
             title: "Office Building",
             desc: "Menjaga kontinuitas bisnis penyewa korporat melalui pemeliharaan preventif sistem pendingin (HVAC), lift, kelistrikan, tata graha ruang kerja, serta pengendalian biaya operasional (OPEX) gedung perkantoran.",
           },
           {
-            num: "02",
-            title: "Apartment & Hunian Vertikal",
-            desc: "Mendampingi pemilik dan pengurus PPPSRS dalam menciptakan lingkungan hunian yang tertib, pengelolaan IPL & Sinking Fund yang transparan, penanganan komplain unit yang responsif, serta perawatan fasilitas bersama.",
-          },
-          {
             num: "03",
-            title: "Mall & Pusat Komersial",
-            desc: "Mengelola alur pengunjung, pengawasan fit-out penyewa ritel, kebersihan area komersial bertrafik tinggi, manajemen parkir, serta kesiapan utilitas pendukung operasional mal setiap hari.",
+            title: "Retail & Commercial Building",
+            desc: "Mengelola alur pengunjung, pengawasan fit-out penyewa ritel, kebersihan area komersial bertrafik tinggi, manajemen parkir, serta kesiapan utilitas pendukung operasional setiap hari.",
           },
           {
             num: "04",
-            title: "Real Estate & Kawasan Terpadu",
-            desc: "Pengelolaan lingkungan kawasan (estate management) yang mencakup pemeliharaan jalan dan drainase, penerangan kawasan, pengolahan air bersih dan limbah, keamanan terpadu, serta penghijauan.",
+            title: "Estate Cluster",
+            desc: "Pengelolaan lingkungan klaster perumahan yang mencakup perawatan taman, jalan, saluran air, pengelolaan sampah, serta sistem keamanan lingkungan 24 jam.",
+          },
+          {
+            num: "05",
+            title: "District Area",
+            desc: "Manajemen operasional kawasan distrik terpadu, sinkronisasi utilitas publik, pengelolaan area komunal multi-properti, dan ketertiban tata ruang kawasan.",
+          },
+          {
+            num: "06",
+            title: "Township",
+            desc: "Pengelolaan kota mandiri berskala makro mencakup pemeliharaan infrastruktur umum, instalasi air bersih (WTP) & limbah (STP), PJU, dan manajemen kelestarian lingkungan kawasan.",
           },
         ],
       },
@@ -449,20 +467,28 @@ export const promindContent = {
         scopeTitle: "Managed Property Sectors",
         scopes: [
           {
-            title: "Office Building",
-            desc: "Commercial tower operations, M&E reliability, and operating cost efficiency.",
-          },
-          {
             title: "Apartment",
-            desc: "High-rise residential management, PPPSRS partnership, and resident comfort.",
+            desc: "Integrated vertical living management, PPPSRS partnership, resident comfort, and shared facility reliability.",
           },
           {
-            title: "Mall & Commercial",
-            desc: "Retail center operations, tenant fit-out coordination, and public area order.",
+            title: "Office Building",
+            desc: "Commercial tower operations, M&E systems reliability, integrated security, and operating cost (OPEX) efficiency.",
           },
           {
-            title: "Real Estate",
-            desc: "Integrated estate management, infrastructure upkeep, landscaping, and security.",
+            title: "Retail & Commercial Building",
+            desc: "Shopping center and commercial property management, retail tenant coordination, cleanliness, and public area order.",
+          },
+          {
+            title: "Estate Cluster",
+            desc: "Residential cluster management, organized environment, landscape upkeep, drainage systems, and 24/7 security.",
+          },
+          {
+            title: "District Area",
+            desc: "Multi-functional district area management, shared amenities integration, utility coordination, and traffic flow.",
+          },
+          {
+            title: "Township",
+            desc: "Comprehensive township-scale management, macro infrastructure, regional WTP/STP, and sustainable environmental care.",
           },
         ],
         supportingLabel: "DIGITAL OPERATIONAL SUPPORT",
@@ -479,27 +505,37 @@ export const promindContent = {
         eyebrow: "PROPERTY SECTORS",
         title: "Management Tailored to the Character of Every Asset.",
         subtitle:
-          "Different property types demand distinct operational priorities. We structure our on-site teams, standard operating procedures, and service standards around your building's specific profile.",
+          "Different property types demand distinct operational priorities. We structure our on-site teams, standard operating procedures, and service standards around your asset's specific profile.",
         items: [
           {
             num: "01",
+            title: "Apartment",
+            desc: "Partnering with owners and PPPSRS boards to maintain orderly living environments, transparent IPL and Sinking Fund accounting, responsive unit servicing, and well-kept shared amenities.",
+          },
+          {
+            num: "02",
             title: "Office Building",
             desc: "Supporting business continuity for corporate tenants through preventive maintenance of HVAC, elevators, electrical systems, executive housekeeping, and disciplined OPEX control.",
           },
           {
-            num: "02",
-            title: "Apartment & Vertical Residences",
-            desc: "Partnering with owners and PPPSRS boards to maintain orderly living environments, transparent IPL and Sinking Fund accounting, responsive unit servicing, and well-kept shared amenities.",
-          },
-          {
             num: "03",
-            title: "Mall & Commercial Centers",
+            title: "Retail & Commercial Building",
             desc: "Managing visitor flow, retail tenant fit-out supervision, high-traffic commercial housekeeping, parking operations, and daily utility readiness.",
           },
           {
             num: "04",
-            title: "Real Estate & Integrated Estates",
-            desc: "Comprehensive estate management covering road and drainage upkeep, street lighting, water and wastewater treatment plants, integrated security, and landscape care.",
+            title: "Estate Cluster",
+            desc: "Residential cluster management covering parks, roadways, stormwater drainage, waste management, and dedicated 24-hour estate security.",
+          },
+          {
+            num: "05",
+            title: "District Area",
+            desc: "Operational governance for mixed-use districts, common utility synchronization, multi-property communal space management, and district zoning compliance.",
+          },
+          {
+            num: "06",
+            title: "Township",
+            desc: "Macro-scale township management covering regional utilities, municipal water & wastewater systems (WTP/STP), public lighting, and sustainable environmental preservation.",
           },
         ],
       },
