@@ -28,7 +28,7 @@ export const promindContent = {
     ],
     home: {
       hero: {
-        eyebrow: "PROPERTY & BUILDING MANAGEMENT",
+        eyebrow: "PROPERTY & ESTATE MANAGEMENT",
         titleMain: "Pengelolaan Properti yang Terukur,",
         titleHighlight: "Rapi, dan Berkelanjutan.",
         description:
@@ -439,7 +439,7 @@ export const promindContent = {
     ],
     home: {
       hero: {
-        eyebrow: "PROPERTY & BUILDING MANAGEMENT",
+        eyebrow: "PROPERTY & ESTATE MANAGEMENT",
         titleMain: "Structured, Reliable, and Sustainable",
         titleHighlight: "Property Management.",
         description:
