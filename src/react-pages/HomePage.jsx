@@ -170,7 +170,7 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 2. Managed Property Scope & PROAPPS Digital Supporting Bar (Addressing Foto 1 cleanly) */}
+      {/* 2. Managed Property Scope & Digital Supporting Bar */}
       <section className="bg-white border-b border-[#d8dfe5] py-14">
         <div className="wrap">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -194,13 +194,13 @@ export default function HomePage({
               </div>
             </div>
 
-            {/* PROAPPS as Digital Supporting System */}
+            {/* Digital Supporting System */}
             <div className="lg:col-span-4 bg-[#f4f7fa] border-l-2 border-[#2b5caf] p-6 self-stretch flex flex-col justify-center">
               <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#2b5caf] block mb-2">
                 {home.hero.supportingLabel}
               </span>
               <div className="text-xl font-extrabold text-[#172b42] font-manrope tracking-tight mb-2">
-                PROAPPS
+                {lang === 'id' ? 'SISTEM DIGITAL' : 'DIGITAL SYSTEM'}
               </div>
               <p className="text-xs sm:text-sm text-[#4f5f70] leading-relaxed m-0">
                 {home.hero.supportingText}
@@ -312,7 +312,7 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 7. PROAPPS Digital Supporting System */}
+      {/* 7. Digital Supporting System */}
       <section className="technology section-pad">
         <div className="wrap technology-grid">
           <div className="technology-copy">
@@ -320,8 +320,8 @@ export default function HomePage({
             <h2>{home.technology.title}</h2>
             <p>{home.technology.description}</p>
             <div className="technology-wordmark">
-              PROAPPS{" "}
-              <span>Digital Supporting System for Building Management</span>
+              PROMIND{" "}
+              <span>{lang === 'id' ? 'Sistem Pendukung Digital Building Management' : 'Digital Supporting System for Building Management'}</span>
             </div>
           </div>
 

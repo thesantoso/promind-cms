@@ -30,7 +30,7 @@ export const promindContent = {
         titleMain: "Pengelolaan Properti yang Terukur,",
         titleHighlight: "Rapi, dan Berkelanjutan.",
         description:
-          "PROMIND mendampingi pemilik aset dalam mengelola operasional Office Building, Apartment, Mall, dan kawasan Real Estate secara menyeluruh—didukung oleh tim lapangan berpengalaman serta sistem PROAPPS sebagai digital supporting operasional.",
+          "PROMIND mendampingi pemilik aset dalam mengelola operasional Office Building, Apartment, Mall, dan kawasan Real Estate secara menyeluruh—didukung oleh tim lapangan berpengalaman serta sistem operasional digital terintegrasi.",
         ctaPrimary: "Hubungi Tim Kami",
         ctaSecondary: "Pelajari Layanan",
         scopeTitle: "Cakupan Pengelolaan Properti",
@@ -54,7 +54,7 @@ export const promindContent = {
         ],
         supportingLabel: "DIGITAL SUPPORTING OPERASIONAL",
         supportingText:
-          "Didukung oleh sistem PROAPPS untuk pencatatan kerja lapangan, layanan tenant, dan pelaporan manajemen yang transparan.",
+          "Didukung oleh sistem digital untuk pencatatan kerja lapangan, layanan tenant, dan pelaporan manajemen yang transparan.",
       },
       intro: {
         eyebrow: "FOKUS KAMI",
@@ -124,9 +124,9 @@ export const promindContent = {
       },
       technology: {
         eyebrow: "DIGITAL SUPPORTING SYSTEM",
-        title: "Operasional Gedung Lebih Terkontrol dengan Dukungan PROAPPS.",
+        title: "Operasional Gedung Lebih Terkontrol dengan Dukungan Sistem Terintegrasi.",
         description:
-          "Sebagai pendukung digital operasional building management, PROAPPS membantu tim di lapangan dan manajemen memantau aktivitas harian secara terstruktur—tanpa menggantikan sentuhan layanan manusia.",
+          "Sebagai pendukung digital operasional building management, sistem kami membantu tim di lapangan dan manajemen memantau aktivitas harian secara terstruktur—tanpa menggantikan sentuhan layanan manusia.",
         steps: [
           {
             num: "01",
@@ -209,8 +209,8 @@ export const promindContent = {
         },
         {
           num: "06",
-          title: "Digital Supporting Operasional dengan PROAPPS",
-          desc: "Integrasi sistem digital PROAPPS untuk mendampingi operasional harian gedung agar alur kerja teknisi, layanan penghuni, dan administrasi tercatat rapi.",
+          title: "Sistem Pendukung Operasional Terintegrasi",
+          desc: "Integrasi sistem digital untuk mendampingi operasional harian gedung agar alur kerja teknisi, layanan penghuni, dan administrasi tercatat rapi.",
           deliverables: [
             "Sistem pencatatan tiket layanan dan tindak lanjut keluhan penghuni",
             "Checklist digital untuk inspeksi rutin peralatan M&E dan kebersihan",
@@ -237,8 +237,8 @@ export const promindContent = {
         },
         {
           code: "04",
-          title: "Pendampingan SOP & Implementasi PROAPPS",
-          desc: "Penerapan standar operasional baru yang didukung oleh sistem digital PROAPPS untuk meningkatkan kerapian kerja tim internal gedung.",
+          title: "Pendampingan SOP & Sistem Operasional",
+          desc: "Penerapan standar operasional baru yang didukung oleh sistem digital untuk meningkatkan kerapian kerja tim internal gedung.",
         },
       ],
     },
@@ -289,7 +289,7 @@ export const promindContent = {
           category: "Digitalisasi Operasional",
           title: "Peran Sistem Pendukung Digital dalam Merapikan Operasional Building Management",
           summary:
-            "Pencatatan manual di atas kertas sering menyulitkan pelacakan riwayat perawatan mesin dan keluhan penyewa. Penggunaan sistem pendukung digital seperti PROAPPS membantu menciptakan alur kerja yang tertib dan terukur.",
+            "Pencatatan manual di atas kertas sering menyulitkan pelacakan riwayat perawatan mesin dan keluhan penyewa. Penggunaan sistem pendukung digital membantu menciptakan alur kerja yang tertib dan terukur.",
           highlights: [
             "Rekam jejak digital riwayat pemeliharaan setiap aset mesin gedung",
             "Pemantauan status penyelesaian komplain penghuni secara transparan",
@@ -305,7 +305,7 @@ export const promindContent = {
       story: [
         "PT PROPERTI MANAJEMEN INOVASI INDONESIA (PROMIND) bergerak di bidang pengelolaan properti dan manajemen fasilitas terpadu untuk berbagai kelas aset—meliputi Office Building, Apartment, Mall, dan kawasan Real Estate.",
         "Kami memahami bahwa setiap gedung merupakan investasi jangka panjang yang memerlukan perawatan fisik berkesinambungan, pengendalian biaya yang cermat, serta pelayanan yang sigap bagi setiap penghuni maupun penyewanya.",
-        "Untuk mendukung kualitas kerja tim di lapangan, PROMIND mengintegrasikan prosedur operasional berstandar ISO dengan PROAPPS sebagai digital supporting operasional—memastikan setiap aktivitas perawatan, layanan tenant, dan pelaporan terdokumentasi secara rapi dan transparan.",
+        "Untuk mendukung kualitas kerja tim di lapangan, PROMIND mengintegrasikan prosedur operasional berstandar ISO dengan sistem pendukung operasional digital—memastikan setiap aktivitas perawatan, layanan tenant, dan pelaporan terdokumentasi secara rapi dan transparan.",
       ],
       pillars: [
         {
@@ -317,7 +317,7 @@ export const promindContent = {
           desc: "Pengelolaan anggaran biaya operasional, pengadaan vendor, serta administrasi iuran pengelolaan yang akuntabel dan terbuka.",
         },
         {
-          title: "Dukungan Sistem Digital PROAPPS",
+          title: "Dukungan Sistem Operasional Digital",
           desc: "Pemanfaatan teknologi pendukung operasional untuk mempermudah pemantauan kerja harian, penanganan keluhan, dan pelaporan.",
         },
         {
@@ -334,7 +334,7 @@ export const promindContent = {
       culturePoints: [
         {
           title: "Standar Kerja yang Jelas & Terstruktur",
-          desc: "Bekerja dengan panduan SOP yang terukur serta dukungan sistem operasional PROAPPS yang memudahkan koordinasi harian.",
+          desc: "Bekerja dengan panduan SOP yang terukur serta dukungan sistem operasional digital yang memudahkan koordinasi harian.",
         },
         {
           title: "Pengembangan Kompetensi & Sertifikasi",
@@ -368,7 +368,7 @@ export const promindContent = {
           dept: "Hospitality & Tenant Service",
           type: "Full-Time",
           exp: "Pengalaman min. 2 tahun",
-          desc: "Menangani komunikasi harian dengan penyewa dan penghuni, mengoordinasikan tindak lanjut permintaan layanan melalui PROAPPS, serta mengawasi administrasi fit-out.",
+          desc: "Menangani komunikasi harian dengan penyewa dan penghuni, mengoordinasikan tindak lanjut permintaan layanan melalui sistem manajemen gedung, serta mengawasi administrasi fit-out.",
         },
         {
           id: "job-4",
@@ -399,7 +399,7 @@ export const promindContent = {
         "Pengelolaan Pusat Perbelanjaan & Komersial (Mall)",
         "Pengelolaan Kawasan Terpadu (Real Estate)",
         "Audit Teknis Gedung & Konsultansi Pra-Operasional",
-        "Implementasi Sistem Pendukung Operasional PROAPPS",
+        "Implementasi Sistem Operasional Digital Terintegrasi",
       ],
       formSuccess:
         "Terima kasih. Pesan Anda telah kami terima dan tim PROMIND akan segera menghubungi Anda untuk tindak lanjut.",
@@ -436,7 +436,7 @@ export const promindContent = {
         titleMain: "Structured, Reliable, and Sustainable",
         titleHighlight: "Property Management.",
         description:
-          "PROMIND partners with asset owners to manage the daily operations of Office Buildings, Apartments, Malls, and Real Estate developments—combining experienced on-site teams with PROAPPS as our digital operational support system.",
+          "PROMIND partners with asset owners to manage the daily operations of Office Buildings, Apartments, Malls, and Real Estate developments—combining experienced on-site teams with an integrated digital operational support system.",
         ctaPrimary: "Contact Our Team",
         ctaSecondary: "Explore Services",
         scopeTitle: "Managed Property Sectors",
@@ -460,7 +460,7 @@ export const promindContent = {
         ],
         supportingLabel: "DIGITAL OPERATIONAL SUPPORT",
         supportingText:
-          "Supported by the PROAPPS system for field work logging, tenant services, and transparent management reporting.",
+          "Supported by an integrated digital operational system for field work logging, tenant services, and transparent management reporting.",
       },
       intro: {
         eyebrow: "OUR FOCUS",
@@ -530,9 +530,9 @@ export const promindContent = {
       },
       technology: {
         eyebrow: "DIGITAL SUPPORTING SYSTEM",
-        title: "Better Controlled Building Operations Supported by PROAPPS.",
+        title: "Better Controlled Building Operations Supported by Integrated Systems.",
         description:
-          "As a digital operational support system for building management, PROAPPS helps field teams and management monitor daily activities in a structured manner—complementing hands-on human service.",
+          "As a digital operational support system for building management, our platform helps field teams and management monitor daily activities in a structured manner—complementing hands-on human service.",
         steps: [
           {
             num: "01",
@@ -615,8 +615,8 @@ export const promindContent = {
         },
         {
           num: "06",
-          title: "Digital Operational Support with PROAPPS",
-          desc: "Integration of the PROAPPS digital system to support daily building operations, keeping technician workflows, occupant services, and administration organized.",
+          title: "Integrated Digital Operational Support",
+          desc: "Integration of a digital operational system to support daily building operations, keeping technician workflows, occupant services, and administration organized.",
           deliverables: [
             "Service ticket logging and occupant complaint follow-up tracking",
             "Digital checklists for routine M&E equipment and housekeeping inspections",
@@ -643,8 +643,8 @@ export const promindContent = {
         },
         {
           code: "04",
-          title: "SOP Standardization & PROAPPS Deployment",
-          desc: "Implementation of structured operating procedures supported by the PROAPPS digital system for internal building teams.",
+          title: "SOP Standardization & Digital Operational Support",
+          desc: "Implementation of structured operating procedures supported by a digital operational system for internal building teams.",
         },
       ],
     },
@@ -695,7 +695,7 @@ export const promindContent = {
           category: "Digital Operations",
           title: "How Digital Support Systems Streamline Daily Building Management",
           summary:
-            "Paper logs make it difficult to track recurring machine repairs and tenant requests. Utilizing a digital support system like PROAPPS creates an orderly, measurable operational workflow.",
+            "Paper logs make it difficult to track recurring machine repairs and tenant requests. Utilizing a digital support system creates an orderly, measurable operational workflow.",
           highlights: [
             "Digital maintenance histories for every piece of building equipment",
             "Transparent tracking of occupant request resolution status",
@@ -711,7 +711,7 @@ export const promindContent = {
       story: [
         "PT PROPERTI MANAJEMEN INOVASI INDONESIA (PROMIND) specializes in integrated property and facility management across key asset classes—including Office Buildings, Apartments, Malls, and Real Estate developments.",
         "We recognize that every property is a long-term asset requiring continuous physical care, prudent cost control, and responsive service for every tenant and resident.",
-        "To support our teams on the ground, PROMIND combines ISO-aligned operating procedures with PROAPPS as our digital operational support system—ensuring maintenance activities, tenant services, and management reports are documented clearly and transparently.",
+        "To support our teams on the ground, PROMIND combines ISO-aligned operating procedures with an integrated digital operational support system—ensuring maintenance activities, tenant services, and management reports are documented clearly and transparently.",
       ],
       pillars: [
         {
@@ -723,7 +723,7 @@ export const promindContent = {
           desc: "Accountable, open management of operating budgets, vendor procurement, and service charge administration.",
         },
         {
-          title: "PROAPPS Digital Operational Support",
+          title: "Integrated Digital Operational Support",
           desc: "Practical technology support that simplifies daily work monitoring, complaint handling, and management reporting.",
         },
         {
@@ -740,7 +740,7 @@ export const promindContent = {
       culturePoints: [
         {
           title: "Clear & Structured Working Standards",
-          desc: "Work with well-defined SOPs and the support of the PROAPPS operational system for smooth daily coordination.",
+          desc: "Work with well-defined SOPs and the support of a digital operational system for smooth daily coordination.",
         },
         {
           title: "Competency & Safety Development",
@@ -774,7 +774,7 @@ export const promindContent = {
           dept: "Hospitality & Tenant Service",
           type: "Full-Time",
           exp: "Min. 2 years experience",
-          desc: "Handle daily communication with tenants and residents, coordinate service request follow-ups via PROAPPS, and supervise fit-out administration.",
+          desc: "Handle daily communication with tenants and residents, coordinate service request follow-ups via the building service portal, and supervise fit-out administration.",
         },
         {
           id: "job-4",
@@ -805,7 +805,7 @@ export const promindContent = {
         "Mall & Commercial Center Management",
         "Real Estate & Estate Management",
         "Technical Building Audit & Pre-Operational Advisory",
-        "PROAPPS Digital Operational Support Implementation",
+        "Integrated Digital Operational Support Implementation",
       ],
       formSuccess:
         "Thank you. We have received your message and the PROMIND team will contact you shortly.",

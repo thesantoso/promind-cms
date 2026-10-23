@@ -49,9 +49,9 @@ export default function Footer({ onNavigate, t, lang }) {
             ))}
           </div>
 
-          {/* Standards & PROAPPS Column */}
+          {/* Standards Column */}
           <div className="footer-column footer-standards">
-            <h2>{lang === 'id' ? 'Standar & Sistem' : 'Standards & System'}</h2>
+            <h2>{lang === 'id' ? 'Standar & Sertifikasi' : 'Standards & Certifications'}</h2>
             <ul>
               {meta.standards.map((std) => (
                 <li key={std.code}>
@@ -59,14 +59,6 @@ export default function Footer({ onNavigate, t, lang }) {
                   <span>{std.name}</span>
                 </li>
               ))}
-              <li>
-                <strong>PROAPPS</strong>
-                <span>
-                  {lang === 'id'
-                    ? 'Digital Supporting Operasional Building Management'
-                    : 'Digital Operational Support for Building Management'}
-                </span>
-              </li>
             </ul>
           </div>
         </div>

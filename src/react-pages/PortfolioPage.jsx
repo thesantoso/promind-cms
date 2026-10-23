@@ -152,8 +152,8 @@ export default function PortfolioPage({ t, lang, onNavigate, dynamicPortfolio })
             </h1>
             <p className="text-base sm:text-lg text-[#526374] leading-relaxed m-0">
               {lang === 'id'
-                ? 'PROMIND dipercaya menangani operasional Office Building, Apartment, Mall, serta kawasan Real Estate dan fasilitas korporat dengan dukungan sistem operasional PROAPPS.'
-                : 'PROMIND is trusted to manage Office Buildings, Apartments, Malls, Real Estate developments, and corporate facilities—supported by the PROAPPS operational system.'}
+                ? 'PROMIND dipercaya menangani operasional Office Building, Apartment, Mall, serta kawasan Real Estate dan fasilitas korporat dengan dukungan sistem operasional terintegrasi.'
+                : 'PROMIND is trusted to manage Office Buildings, Apartments, Malls, Real Estate developments, and corporate facilities—supported by an integrated operational system.'}
             </p>
           </div>
         </div>
