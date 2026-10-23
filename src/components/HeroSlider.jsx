@@ -20,73 +20,84 @@ const HERO_SLIDES = [
   },
 ];
 
-export default function HeroSlider() {
+export default function HeroSlider({ slides = HERO_SLIDES }) {
   const [activeSlide, setActiveSlide] = useState(0);
+  const items = slides && slides.length > 0 ? slides : HERO_SLIDES;
 
   useEffect(() => {
+    if (activeSlide >= items.length) {
+      setActiveSlide(0);
+    }
+    if (items.length <= 1) {
+      return;
+    }
     const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+      setActiveSlide((prev) => (prev + 1) % items.length);
     }, 4500);
     return () => clearInterval(timer);
-  }, []);
+  }, [items.length, activeSlide]);
 
   const prevSlide = () => {
-    setActiveSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+    if (items.length <= 1) return;
+    setActiveSlide((prev) => (prev - 1 + items.length) % items.length);
   };
 
   const nextSlide = () => {
-    setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    if (items.length <= 1) return;
+    setActiveSlide((prev) => (prev + 1) % items.length);
   };
 
   return (
     <div className="hero-image">
-      {HERO_SLIDES.map((slide, idx) => (
+      {items.map((slide, idx) => (
         <div
-          key={slide.url}
+          key={slide.url || idx}
           className={`hero-slide ${idx === activeSlide ? 'is-active' : ''}`}
           aria-hidden={idx !== activeSlide}
         >
           <img
             src={slide.url}
-            alt={slide.alt}
+            alt={slide.alt || 'Foto Hero'}
             loading={idx === 0 ? 'eager' : 'lazy'}
           />
         </div>
       ))}
       <div className="hero-gradient" />
 
-      {/* Minimalist Slider Controls */}
-      <div className="hero-slider-controls">
-        <button
-          type="button"
-          onClick={prevSlide}
-          className="text-white/80 hover:text-white p-1 cursor-pointer"
-          aria-label="Foto sebelumnya"
-        >
-          <ChevronLeft size={15} />
-        </button>
+      {/* Minimalist Slider Controls (only shown if more than 1 item) */}
+      {items.length > 1 && (
+        <div className="hero-slider-controls">
+          <button
+            type="button"
+            onClick={prevSlide}
+            className="text-white/80 hover:text-white p-1 cursor-pointer"
+            aria-label="Foto sebelumnya"
+          >
+            <ChevronLeft size={15} />
+          </button>
 
-        <div className="flex items-center gap-1.5 px-1">
-          {HERO_SLIDES.map((_, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => setActiveSlide(idx)}
-              className={`hero-dot cursor-pointer ${idx === activeSlide ? 'is-active' : ''}`}
-              aria-label={`Slide ${idx + 1}`}
-            />
-          ))}
+          <div className="flex items-center gap-1.5 px-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setActiveSlide(idx)}
+                className={`hero-dot cursor-pointer ${idx === activeSlide ? 'is-active' : ''}`}
+                aria-label={`Slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={nextSlide}
+            className="text-white/80 hover:text-white p-1 cursor-pointer"
+            aria-label="Foto selanjutnya"
+          >
+            <ChevronRight size={15} />
+          </button>
         </div>
-
-        <button
-          type="button"
-          onClick={nextSlide}
-          className="text-white/80 hover:text-white p-1 cursor-pointer"
-          aria-label="Foto selanjutnya"
-        >
-          <ChevronRight size={15} />
-        </button>
-      </div>
+      )}
     </div>
   );
 }

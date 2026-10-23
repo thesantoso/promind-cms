@@ -45,6 +45,9 @@ export default function HomePage({
     if (activeSlide >= heroSlides.length) {
       setActiveSlide(0);
     }
+    if (heroSlides.length <= 1) {
+      return;
+    }
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % heroSlides.length);
     }, 4500);
@@ -52,12 +55,14 @@ export default function HomePage({
   }, [heroSlides.length, activeSlide]);
 
   const prevSlide = () => {
+    if (heroSlides.length <= 1) return;
     setActiveSlide(
       (prev) => (prev - 1 + heroSlides.length) % heroSlides.length,
     );
   };
 
   const nextSlide = () => {
+    if (heroSlides.length <= 1) return;
     setActiveSlide((prev) => (prev + 1) % heroSlides.length);
   };
 
@@ -128,38 +133,40 @@ export default function HomePage({
           ))}
           <div className="hero-gradient" />
 
-          {/* Minimalist Slider Controls */}
-          <div className="hero-slider-controls">
-            <button
-              type="button"
-              onClick={prevSlide}
-              className="text-white/80 hover:text-white p-1 cursor-pointer"
-              aria-label={lang === "id" ? " Foto sebelumnya" : "Previous photo"}
-            >
-              <ChevronLeft size={15} />
-            </button>
+          {/* Minimalist Slider Controls (only shown if more than 1 item) */}
+          {heroSlides.length > 1 && (
+            <div className="hero-slider-controls">
+              <button
+                type="button"
+                onClick={prevSlide}
+                className="text-white/80 hover:text-white p-1 cursor-pointer"
+                aria-label={lang === "id" ? " Foto sebelumnya" : "Previous photo"}
+              >
+                <ChevronLeft size={15} />
+              </button>
 
-            <div className="flex items-center gap-1.5 px-1">
-              {heroSlides.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setActiveSlide(idx)}
-                  className={`hero-dot cursor-pointer ${idx === activeSlide ? "is-active" : ""}`}
-                  aria-label={`Slide ${idx + 1}`}
-                />
-              ))}
+              <div className="flex items-center gap-1.5 px-1">
+                {heroSlides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveSlide(idx)}
+                    className={`hero-dot cursor-pointer ${idx === activeSlide ? "is-active" : ""}`}
+                    aria-label={`Slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={nextSlide}
+                className="text-white/80 hover:text-white p-1 cursor-pointer"
+                aria-label={lang === "id" ? "Foto berikutnya" : "Next photo"}
+              >
+                <ChevronRight size={15} />
+              </button>
             </div>
-
-            <button
-              type="button"
-              onClick={nextSlide}
-              className="text-white/80 hover:text-white p-1 cursor-pointer"
-              aria-label={lang === "id" ? "Foto berikutnya" : "Next photo"}
-            >
-              <ChevronRight size={15} />
-            </button>
-          </div>
+          )}
         </div>
       </section>
 
