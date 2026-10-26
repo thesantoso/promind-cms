@@ -170,29 +170,7 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* 2. Managed Property Scope */}
-      <section className="bg-white border-b border-[#d8dfe5] py-14">
-        <div className="wrap">
-          <p className="eyebrow mb-5">{home.hero.scopeTitle}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 pt-6 border-t border-[#cfd8e0]">
-            {home.hero.scopes.map((item, idx) => (
-              <div key={idx} className="pr-2">
-                <span className="text-[11px] font-extrabold text-[#2b5caf] block mb-1.5">
-                  0{idx + 1}
-                </span>
-                <h2 className="text-base font-bold text-[#172b42] font-manrope mb-1.5 tracking-tight">
-                  {item.title}
-                </h2>
-                <p className="text-xs text-[#5b6874] leading-relaxed m-0">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Editorial Focus Intro */}
+      {/* 2. Editorial Focus Intro */}
       <section className="intro section-pad border-b border-[#e2e6ea]">
         <div className="wrap intro-grid">
           <p className="eyebrow">{home.intro.eyebrow}</p>
