@@ -311,3 +311,38 @@ header, .site-header, header.site-header {
   .maintenance-details{display:block}
   .maintenance-footer-inner{align-items:flex-start;flex-direction:column;justify-content:center;gap:5px;padding:20px 0}
 }
+
+/* Focus Pillars & 5/3-column Editorial Grids */
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+.pt-8 { padding-top: 2rem; }
+.pt-10 { padding-top: 2.5rem; }
+.border-t-2 { border-top-width: 2px; }
+.border-transparent { border-color: transparent; }
+.hover\:border-\[\#2b5caf\]:hover { border-color: #2b5caf; }
+.transition-colors { transition-property: color, background-color, border-color; transition-duration: .2s; }
+
+/* Update value-list for 5-pillar layout */
+.value-list {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0 24px;
+}
+.value-list article {
+  padding-right: 12px;
+}
+@media (max-width: 1024px) {
+  .value-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 24px;
+  }
+}
+@media (max-width: 600px) {
+  .value-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+

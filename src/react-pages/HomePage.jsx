@@ -172,12 +172,26 @@ export default function HomePage({
 
       {/* 2. Editorial Focus Intro */}
       <section className="intro section-pad border-b border-[#e2e6ea]">
-        <div className="wrap intro-grid">
-          <p className="eyebrow">{home.intro.eyebrow}</p>
-          <div>
-            <h2>{home.intro.title}</h2>
+        <div className="wrap">
+          <div className="value-heading">
+            <div>
+              <p className="eyebrow">{home.intro.eyebrow}</p>
+              <h2>{home.intro.title}</h2>
+            </div>
             <p>{home.intro.body}</p>
           </div>
+
+          {home.intro.pillars && (
+            <div className="value-list">
+              {home.intro.pillars.map((pillar) => (
+                <article key={pillar.num}>
+                  <span>{pillar.num}</span>
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.desc}</p>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

@@ -69,8 +69,35 @@ export const promindContent = {
       intro: {
         eyebrow: "FOKUS KAMI",
         title:
-          "Menjaga Kualitas Fisik Bangunan Sekaligus Kenyamanan Setiap penggunanya.",
+          "Menjaga Kualitas Fisik Bangunan Sekaligus Kenyamanan Setiap Penggunanya.",
         body: "Pengelolaan gedung yang baik membutuhkan konsistensi setiap hari. Mulai dari kesiapan mesin mekanikal-elektrikal, kebersihan area publik, ketertiban keamanan, hingga administrasi keuangan yang rapi—kami memastikan seluruh aspek operasional berjalan selaras dengan target pemilik properti.",
+        pillars: [
+          {
+            num: "01",
+            title: "Professional Management",
+            desc: "Sumber daya manusia berpengalaman dan standar kerja teruji untuk pengelolaan properti yang andal.",
+          },
+          {
+            num: "02",
+            title: "Value Enhancement",
+            desc: "Meningkatkan nilai aset, kualitas layanan, serta performa properti secara berkelanjutan.",
+          },
+          {
+            num: "03",
+            title: "Operational Excellence",
+            desc: "Pengoperasian gedung dan fasilitas yang efektif, terukur, serta efisien setiap hari.",
+          },
+          {
+            num: "04",
+            title: "Sustainable Environment",
+            desc: "Menciptakan lingkungan properti yang aman, nyaman, dan bertanggung jawab terhadap kelestarian lingkungan.",
+          },
+          {
+            num: "05",
+            title: "Technology Driven Management",
+            desc: "Menghadirkan pengelolaan properti yang lebih cerdas, terintegrasi, dan optimal melalui dukungan teknologi.",
+          },
+        ],
       },
       sectors: {
         eyebrow: "SEKTOR PROPERTI",
@@ -500,6 +527,33 @@ export const promindContent = {
         title:
           "Preserving Physical Building Quality While Ensuring Occupant Comfort.",
         body: "Effective building management requires daily consistency. From mechanical and electrical readiness, clean public spaces, and disciplined security to transparent financial administration—we ensure every operational aspect aligns with the property owner's objectives.",
+        pillars: [
+          {
+            num: "01",
+            title: "Professional Management",
+            desc: "Experienced people and proven standards for reliable property management.",
+          },
+          {
+            num: "02",
+            title: "Value Enhancement",
+            desc: "Enhancing asset value, service quality and property performance.",
+          },
+          {
+            num: "03",
+            title: "Operational Excellence",
+            desc: "Effective and efficient building operation.",
+          },
+          {
+            num: "04",
+            title: "Sustainable Environment",
+            desc: "Creating safe, comfortable and environmentally responsible properties.",
+          },
+          {
+            num: "05",
+            title: "Technology Driven Management",
+            desc: "Deliver smarter, integrated and optimal management.",
+          },
+        ],
       },
       sectors: {
         eyebrow: "PROPERTY SECTORS",
