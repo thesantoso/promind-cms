@@ -12,13 +12,14 @@ import CareerDetailPage from './react-pages/CareerDetailPage';
 import ContactPage from './react-pages/ContactPage';
 
 import { promindContent } from './data/promindContent';
+import cachedSiteContent from './data/cachedSiteContent.json';
 
 export default function App() {
   const [lang, setLang] = useState('id');
   const [currentPage, setCurrentPage] = useState('home');
   const [activeJobSlug, setActiveJobSlug] = useState(null);
-  const [cmsContent, setCmsContent] = useState(null);
-  const [cmsResolved, setCmsResolved] = useState(false);
+  const [cmsContent, setCmsContent] = useState(cachedSiteContent || null);
+  const [cmsResolved, setCmsResolved] = useState(true);
 
   useEffect(() => {
     fetch('/api/site-content.json')
